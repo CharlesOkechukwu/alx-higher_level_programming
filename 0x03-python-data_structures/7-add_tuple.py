@@ -22,5 +22,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
             return tuple_b
         elif (len_b <= 0) and (len_a <= 2):
             return tuple_a
+        elif (len_b <= 0) and (len_a <= 0):
+            return (0, 0)
         else:
             return (tuple_a[0] + tuple_b[0], 0 + 0)
