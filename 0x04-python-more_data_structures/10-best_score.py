@@ -8,8 +8,8 @@ def best_score(a_dictionary):
     keys = list(a_dictionary.keys())
     num = a_dictionary[keys[0]]
     key = keys[0]
-    for k in keys:
-        if (a_dictionary[k] > num):
-            num = a_dictionary[k]
-            key = k
+    for i, k in a_dictionary.items():
+        if (k > num):
+            num = k
+            key = i
     return key
