@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+def best_score(a_dictionary):
+    """
+    return largest value in a dictionary
+    """
+    if (a_dictionary):
+        keys = list(a_dictionary.keys())
+        num = a_dictionary[keys[0]]
+        for k in keys:
+            if (a_dictionary[k] > num):
+                num = a_dictionary[k]
+                key = k
+        return key
+    else:
+        return None
