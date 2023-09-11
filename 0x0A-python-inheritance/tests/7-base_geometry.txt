@@ -11,6 +11,22 @@ Import Module
 Test Cases
 ==========
 
+Test case 0:
+
+	>>> try:
+	... 	bg.integer_validator()
+	... except Exception as e:
+	... 	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test 1:
+
+	>>> try:
+	... 	bg.integer_validator("distance")
+	... except Exception as e:
+	... 	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] integer_validator() missing 1 required positional argument: 'value'
+
 Test 2:
 
 	>>> try:
