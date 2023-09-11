@@ -112,3 +112,19 @@ Task 12:
 	... except Exception as e:
 	... 	print("[{}] {}".format(e.__class__.__name__, e))
 	[TypeError] name must be an integer
+
+Test 13:
+
+	>>> try:
+	... 	bg.integer_validator("name", (1, 0))
+	... except Exception as e:
+	... 	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
+
+Test 14:
+
+	>>> try:
+	... 	bg.integer_validator("name", {'a': 3})
+	... except Exception as e:
+	... 	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
