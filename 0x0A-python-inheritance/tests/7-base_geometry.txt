@@ -128,3 +128,11 @@ Test 14:
 	... except Exception as e:
 	... 	print("[{}] {}".format(e.__class__.__name__, e))
 	[TypeError] name must be an integer
+
+Test 15:
+
+	>>> try:
+	... 	bg.integer_validator("name", float('nan'))
+	... except Exception as e:
+	... 	print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] name must be an integer
