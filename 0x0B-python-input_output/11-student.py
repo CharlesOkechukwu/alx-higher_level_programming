@@ -26,7 +26,7 @@ class Student(object):
                     obj[att] = d_attr[att]
             return obj
         return d_attr
-    
+
     def reload_from_json(self, json):
         """reload from json file"""
         d_attr = self.__dict__
