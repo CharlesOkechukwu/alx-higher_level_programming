@@ -141,3 +141,9 @@ Test #19: no variable
 	>>> add_integer()
 	Traceback (most recent call last):
 	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test #20: float overflow
+
+	>>> add_integer(2e6000, 2)
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer
