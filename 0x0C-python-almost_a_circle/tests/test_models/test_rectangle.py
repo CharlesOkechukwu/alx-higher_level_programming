@@ -41,3 +41,25 @@ class TestRectangle(unittest.TestCase):
         """test if object is instance of class"""
         r1 = Rectangle(6, 2, 0, 0, 4)
         self.assertIsInstance(r1, Base)
+
+    def test_width_type(self):
+        """Test type of input entered for width"""
+        with self.assertRaises(TypeError) as r1:
+            Rectangle("Hello", 5)
+            self.assertEqual(r1.exception, "width must be an ineteger")
+
+        with self.assertRaises(TypeError) as r2:
+            Rectangle({"a": 12}, 2)
+            self.assertEqual(r2.exception, "width must be an integer")
+
+        with self.assertRaises(TypeError)as r3:
+            Rectangle({2, 5}, 2)
+            self.assertEqual(r3.exception, "width must be an integer")
+
+        with self.assertRaises(TypeError) as r4:
+            Rectangle(1.5, 2)
+            self.assertEqual(r4.exception, "width must be an ineteger")
+
+        with self.assertRaises(TypeError) as r5:
+            Rectangle(None, 2)
+            self.assertEqual(r5.exception, "width must be an integer")
