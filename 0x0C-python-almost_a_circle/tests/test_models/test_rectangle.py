@@ -101,3 +101,33 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as r7:
             Rectangle(1, -6)
             self.assertEqual(r7.exception, "height must be > 0")
+
+    def test_x(self):
+        """Test type of input entered for width"""
+        with self.assertRaises(TypeError) as r1:
+            Rectangle(3, 5, "h")
+            self.assertEqual(r1.exception, "x must be an ineteger")
+
+        with self.assertRaises(TypeError) as r2:
+            Rectangle(5, 2, {"a": 12})
+            self.assertEqual(r2.exception, "x must be an integer")
+
+        with self.assertRaises(TypeError)as r3:
+            Rectangle(2, 1, {2, 5})
+            self.assertEqual(r3.exception, "x must be an integer")
+
+        with self.assertRaises(TypeError) as r4:
+            Rectangle(2, 4, 1.5)
+            self.assertEqual(r4.exception, "x must be an ineteger")
+
+        with self.assertRaises(TypeError) as r5:
+            Rectangle(2, 4, None)
+            self.assertEqual(r5.exception, "x must be an integer")
+
+        with self.assertRaises(ValueError) as r6:
+            Rectangle(4, 6, -1)
+            self.assertEqual(r6.exception, "x must be >= 0")
+
+        with self.assertRaises(ValueError) as r7:
+            Rectangle(1, 3, -15)
+            self.assertEqual(r7.exception, "x must be >= 0")
