@@ -131,3 +131,33 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as r7:
             Rectangle(1, 3, -15)
             self.assertEqual(r7.exception, "x must be >= 0")
+
+    def test_y(self):
+        """Test type of input entered for width"""
+        with self.assertRaises(TypeError) as r1:
+            Rectangle(2, 5, 0, "Hello")
+            self.assertEqual(r1.exception, "y must be an ineteger")
+
+        with self.assertRaises(TypeError) as r2:
+            Rectangle(1, 4, 0, {"a": 12})
+            self.assertEqual(r2.exception, "y must be an integer")
+
+        with self.assertRaises(TypeError)as r3:
+            Rectangle(2, 5, 0, {2, 5})
+            self.assertEqual(r3.exception, "y must be an integer")
+
+        with self.assertRaises(TypeError) as r4:
+            Rectangle(3, 6, 0, 1.5)
+            self.assertEqual(r4.exception, "y must be an ineteger")
+
+        with self.assertRaises(TypeError) as r5:
+            Rectangle(4, 8, 0, None)
+            self.assertEqual(r5.exception, "y must be an integer")
+
+        with self.assertRaises(ValueError) as r6:
+            Rectangle(3, 4, 0, -1)
+            self.assertEqual(r6.exception, "y must be >= 0")
+
+        with self.assertRaises(ValueError) as r7:
+            Rectangle(5, 10, 0, -15)
+            self.assertEqual(r7.exception, "y must be >= 0")
