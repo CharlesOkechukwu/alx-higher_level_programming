@@ -99,3 +99,20 @@ class Rectangle(Base):
         string += f" ({self.id}) {self.__x}/{self.__y}"
         string += f" - {self.__width}/{self.__height}"
         return string
+
+    def update(self, *args, **kwargs):
+        """update attributes of the Rectangle class"""
+        if len(args) > 0:
+            arr = []
+            for arg in args:
+                arr.append(arg)
+            if type(arr[0]) is int:
+                self.id = arr[0]
+            if len(arr) > 1:
+                self.width = arr[1]
+            if len(arr) > 2:
+                self.height = arr[2]
+            if len(arr) > 3:
+                self.x = arr[3]
+            if len(arr) > 4:
+                self.y = arr[4]
