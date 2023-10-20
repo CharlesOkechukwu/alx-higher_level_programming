@@ -21,12 +21,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r1.height, 5)
         self.assertEqual(r1.x, 2)
         self.assertEqual(r1.y, 3)
-        self.assertEqual(r1.id, 5)
+        self.assertEqual(r1.id, 8)
         self.assertEqual(r2.width, 6)
         self.assertEqual(r2.height, 3)
         self.assertEqual(r2.x, 0)
         self.assertEqual(r2.y, 0)
-        self.assertEqual(r2.id, 6)
+        self.assertEqual(r2.id, 9)
         self.assertEqual(r3.id, 5)
 
     def test_wrong_input(self):
@@ -161,3 +161,17 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as r7:
             Rectangle(5, 10, 0, -15)
             self.assertEqual(r7.exception, "y must be >= 0")
+
+    def test_area(self):
+        """test area feature"""
+        r1 = Rectangle(2, 4)
+        self.assertEqual(r1.area(), 8)
+
+        r2 = Rectangle(2, 5, 1)
+        self.assertEqual(r2.area(), 10)
+
+        r3 = Rectangle(10, 25, 0, 0)
+        self.assertEqual(r3.area(), 250)
+
+        r4 = Rectangle(9, 8, 0, 1, 15)
+        self.assertEqual(r4.area(), 72)
