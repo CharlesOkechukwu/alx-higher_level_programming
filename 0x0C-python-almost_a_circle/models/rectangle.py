@@ -116,3 +116,17 @@ class Rectangle(Base):
                 self.x = arr[3]
             if len(arr) > 4:
                 self.y = arr[4]
+
+        if len(kwargs) > 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if type(v) is int:
+                        self.id = v
+                if k == "width":
+                    self.width = v
+                if k == "height":
+                    self.height = v
+                if k == "x":
+                    self.x = v
+                if k == "y":
+                    self.y = v
